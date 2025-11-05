@@ -12,142 +12,115 @@
 #include <iterator>
 #include <sstream>
 
-using std::cin;
-using std::count;
-using std::cout;
-using std::endl;
-using std::fixed;
-using std::ifstream;
-using std::invalid_argument;
-using std::isdigit;
-using std::isspace;
-using std::istreambuf_iterator;
-using std::left;
-using std::move;
-using std::numeric_limits;
-using std::ofstream;
-using std::ostringstream;
-using std::setfill;
-using std::setprecision;
-using std::setw;
-using std::sort;
-using std::stod;
-using std::stof;
-using std::stoi;
-using std::streamsize;
-using std::string;
-using std::to_string;
-using std::vector;
-
-string createHeader(const std::string &mode, bool showAddress)
+std::string createHeader(const std::string &mode, bool showAddress)
 {
-    ostringstream header;
+    std::ostringstream header;
     const int wLastName = 15;
     const int wFirsName = 15;
     const int wGrade = 20;
 
     if (showAddress)
     {
-        header << left
-               << setw(18) << "Address";
+        header << std::left
+               << std::setw(18) << "Address";
     }
 
     if (mode == "m")
     {
         // -- header --
-        header << left
-               << setw(wFirsName) << "Name"
-               << setw(wLastName) << "Last name"
-               << setw(wGrade) << "Final grade (mean)" << '\n';
+        header << std::left
+               << std::setw(wFirsName) << "Name"
+               << std::setw(wLastName) << "Last name"
+               << std::setw(wGrade) << "Final grade (mean)" << '\n';
         // -- separator line --
-        header << setfill('-')
-               << setw(wFirsName) << ""
-               << setw(wLastName) << ""
-               << setw(wGrade) << "" << '\n'
-               << setfill(' ');
+        header << std::setfill('-')
+               << std::setw(wFirsName) << ""
+               << std::setw(wLastName) << ""
+               << std::setw(wGrade) << "" << '\n'
+               << std::setfill(' ');
     }
     else if (mode == "md")
     {
         // -- header --
-        header << left
-               << setw(wFirsName) << "Name"
-               << setw(wLastName) << "Last name"
-               << setw(wGrade) << "Final grade (median)" << '\n';
+        header << std::left
+               << std::setw(wFirsName) << "Name"
+               << std::setw(wLastName) << "Last name"
+               << std::setw(wGrade) << "Final grade (median)" << '\n';
 
         // -- separator line --
-        header << setfill('-')
-               << setw(wFirsName) << ""
-               << setw(wLastName) << ""
-               << setw(wGrade) << "" << '\n'
-               << setfill(' ');
+        header << std::setfill('-')
+               << std::setw(wFirsName) << ""
+               << std::setw(wLastName) << ""
+               << std::setw(wGrade) << "" << '\n'
+               << std::setfill(' ');
     }
     else
     {
         // -- header --
-        header << left
-               << setw(wFirsName) << "Name"
-               << setw(wLastName) << "Last name"
-               << setw(wGrade) << "Final grade (mean)"
-               << setw(wGrade) << "Final grade (median)" << '\n';
+        header << std::left
+               << std::setw(wFirsName) << "Name"
+               << std::setw(wLastName) << "Last name"
+               << std::setw(wGrade) << "Final grade (mean)"
+               << std::setw(wGrade) << "Final grade (median)" << '\n';
 
         // -- separator line --
-        header << setfill('-')
-               << setw(wFirsName) << ""
-               << setw(wLastName) << ""
-               << setw(wGrade) << ""
-               << setw(wGrade) << "" << '\n'
-               << setfill(' ');
+        header << std::setfill('-')
+               << std::setw(wFirsName) << ""
+               << std::setw(wLastName) << ""
+               << std::setw(wGrade) << ""
+               << std::setw(wGrade) << "" << '\n'
+               << std::setfill(' ');
     }
 
     return header.str();
 }
 
-string formatStudentRow(const Student &student, const std::string &mode, bool showAddress)
+std::string formatStudentRow(const Student &student, const std::string &mode, bool showAddress)
 {
-    ostringstream studentRow;
+    std::ostringstream studentRow;
     const int wLastName = 15;
     const int wFirsName = 15;
     const int wGrade = 20;
 
     if (showAddress)
     {
-        ostringstream address;
+        std::ostringstream address;
         const void *studAddr = static_cast<const void *>(&student);
         address << studAddr;
-        studentRow << left
-                   << setw(18) << address.str();
+        studentRow << std::left
+                   << std::setw(18) << address.str();
     }
 
     if (mode == "m")
     {
 
         // -- student data --
-        studentRow << left
-                   << setw(wFirsName) << student.firstName
-                   << setw(wLastName) << student.lastName
-                   << fixed << setprecision(2)
-                   << setw(wGrade) << student.finalGradeMean << '\n';
+        studentRow << std::left
+                   << std::setw(wFirsName) << student.firstName()
+                   << std::setw(wLastName) << student.lastName()
+                   << std::fixed << std::setprecision(2)
+                   << std::setw(wGrade) << student.finalMean() << '\n';
     }
     else if (mode == "md")
     {
 
         // -- student data --
-        studentRow << left
-                   << setw(wFirsName) << student.firstName
-                   << setw(wLastName) << student.lastName
-                   << fixed << setprecision(2)
-                   << setw(wGrade) << student.finalGradeMedian << '\n';
+        studentRow << std::left
+                   << std::setw(wFirsName) << student.firstName()
+                   << std::setw(wLastName) << student.lastName()
+                   << std::fixed << std::setprecision(2)
+                   << std::setw(wGrade) << student.finalMedian() << '\n';
     }
     else
     {
 
         // -- student data --
-        studentRow << left
-                   << setw(wFirsName) << student.firstName
-                   << setw(wLastName) << student.lastName
-                   << fixed << setprecision(2)
-                   << setw(wGrade) << student.finalGradeMean
-                   << setw(wGrade) << student.finalGradeMedian << '\n';
+        studentRow << std::left
+                   << std::setw(wFirsName) << student.firstName()
+                   << std::setw(wLastName) << student.lastName()
+                   << std::fixed << std::setprecision(2)
+                   << std::setw(wGrade) << student.finalMean()
+                   << std::setw(wGrade) << student.finalMedian() << '\n';
     }
 
     return studentRow.str();
@@ -156,33 +129,37 @@ string formatStudentRow(const Student &student, const std::string &mode, bool sh
 void printStudents(StudentContainer &students, const std::string &mode, bool showAddress)
 {
 
-    cout << createHeader(mode, showAddress);
+    std::cout << createHeader(mode, showAddress);
     for (auto &student : students)
     {
-        cout << formatStudentRow(student, mode, showAddress);
+        std::cout << formatStudentRow(student, mode, showAddress);
     }
 }
 
 Student getUserStudentInput()
 {
     Student student;
-    string grade;
+    std::string grade;
     double temp_grade;
-    string stopWord = "stop";
-    string randomWord = "r";
-    string userInput;
+    std::string stopWord = "stop";
+    std::string randomWord = "r";
+    std::string userInput;
+    std::string firstN, lastN;
 
-    cout << "Input student data." << endl;
-    cout << "First name: ";
-    cin >> student.firstName;
-    cout << "Last name: ";
-    cin >> student.lastName;
+    std::cout << "Input student data." << std::endl;
+    std::cout << "First name: ";
+    std::cin >> firstN;
+    student.setFirstName(firstN);
+
+    std::cout << "Last name: ";
+    std::cin >> lastN;
+    student.setLastName(lastN);
 
     while (true)
     {
-        cout << "" << endl;
-        cout << "Enter " << student.firstName << " " << student.lastName << " homework grade (1-10) manually, type 'r' to generated random grade or type 'stop': ";
-        cin >> userInput;
+        std::cout << "" << std::endl;
+        std::cout << "Enter " << student.firstName() << " " << student.lastName() << " homework grade (1-10) manually, type 'r' to generated random grade or type 'stop': ";
+        std::cin >> userInput;
         if (userInput == stopWord)
         {
             break;
@@ -191,7 +168,7 @@ Student getUserStudentInput()
         if (userInput == randomWord)
         {
             temp_grade = getRandomGrade();
-            cout << "Random grade is: " << temp_grade << endl;
+            std::cout << "Random grade is: " << temp_grade << std::endl;
         }
         else
         {
@@ -202,13 +179,13 @@ Student getUserStudentInput()
                 temp_grade = stoi(userInput, &parsed);
                 if (parsed != userInput.size())
                 {
-                    cout << "Invalid input!" << endl;
+                    std::cout << "Invalid input!" << std::endl;
                     continue;
                 }
             }
-            catch (const std::invalid_argument& err)
+            catch (const std::invalid_argument &err)
             {
-                cout << "Invalid input!" << endl;
+                std::cout << "Invalid input!" << std::endl;
                 continue;
             }
         }
@@ -216,24 +193,24 @@ Student getUserStudentInput()
         // check if grade is 1-10
         if (temp_grade >= 1 && temp_grade <= 10)
         {
-            student.grades.push_back(temp_grade);
+            student.addGrade(temp_grade);
         }
         else
         {
-            cout << "Grade must be between 1 and 10." << endl;
+            std::cout << "Grade must be between 1 and 10." << std::endl;
         }
     }
 
     while (true)
     {
-        cout << "" << endl;
-        cout << "Input exam grade manually, or write 'r' to generated random grade: ";
-        cin >> userInput;
+        std::cout << "" << std::endl;
+        std::cout << "Input exam grade manually, or write 'r' to generated random grade: ";
+        std::cin >> userInput;
 
         if (userInput == randomWord)
         {
             temp_grade = getRandomGrade();
-            cout << "Random exam grade is: " << temp_grade << endl;
+            std::cout << "Random exam grade is: " << temp_grade << std::endl;
         }
         else
         {
@@ -244,24 +221,24 @@ Student getUserStudentInput()
                 temp_grade = stoi(userInput, &parsed);
                 if (parsed != userInput.size())
                 {
-                    cout << "Invalid input!" << endl;
+                    std::cout << "Invalid input!" << std::endl;
                     continue;
                 }
             }
-            catch (const std::invalid_argument& err)
+            catch (const std::invalid_argument &err)
             {
-                cout << "Invalid input!" << endl;
+                std::cout << "Invalid input!" << std::endl;
                 continue;
             }
         }
         if (temp_grade >= 1 && temp_grade <= 10)
         {
-            student.exam = temp_grade;
+            student.setExam(temp_grade);
             break;
         }
         else
         {
-            cout << "Grade must be between 1 and 10." << endl;
+            std::cout << "Grade must be between 1 and 10." << std::endl;
         }
     }
 
@@ -274,55 +251,55 @@ int getUserMenuChoice()
 
     while (true)
     {
-        cout << "" << endl;
-        cout << "Choose a number from the menu:" << endl;
-        cout << "1. Add new student" << endl;
-        cout << "2. Calculate grades" << endl;
-        cout << "3. Insert student data from a file" << endl;
-        cout << "4. Generate random student file" << endl;
-        cout << "5. Sort student data into categories" << endl;
-        cout << "6. Exit" << endl;
-        cout << "" << endl;
-        cin >> n;
+        std::cout << "" << std::endl;
+        std::cout << "Choose a number from the menu:" << std::endl;
+        std::cout << "1. Add new student" << std::endl;
+        std::cout << "2. Calculate grades" << std::endl;
+        std::cout << "3. Insert student data from a file" << std::endl;
+        std::cout << "4. Generate random student file" << std::endl;
+        std::cout << "5. Sort student data into categories" << std::endl;
+        std::cout << "6. Exit" << std::endl;
+        std::cout << "" << std::endl;
+        std::cin >> n;
         if (n == 1 || n == 2 || n == 3 || n == 4 || n == 5 || n == 6)
         {
             return n;
         }
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Invalid menu number!" << endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid menu number!" << std::endl;
     }
 }
 
-void getModeChoice(string &mode)
+void getModeChoice(std::string &mode)
 {
-    cout << "" << endl;
-    cout << "Would you like to view the calculated final grade with:" << endl;
-    cout << "m = mean" << endl;
-    cout << "md = median" << endl;
-    cout << "b = both" << endl;
-    cout << "" << endl;
+    std::cout << "" << std::endl;
+    std::cout << "Would you like to view the calculated final grade with:" << std::endl;
+    std::cout << "m = mean" << std::endl;
+    std::cout << "md = median" << std::endl;
+    std::cout << "b = both" << std::endl;
+    std::cout << "" << std::endl;
 
     while (true)
     {
-        cin >> mode;
+        std::cin >> mode;
         if (mode != "m" && mode != "md" && mode != "b")
         {
-            cout << "You must input valid value!" << endl;
+            std::cout << "You must input valid value!" << std::endl;
             continue;
         }
         break;
     }
 }
 
-int checkFileAvailability(string file)
+int checkFileAvailability(std::string file)
 {
-    string fileText;
-    ifstream f(file);
+    std::string fileText;
+    std::ifstream f(file);
 
     if (!f.is_open())
     {
-        cout << "Error opening the file!" << endl;
+        std::cout << "Error opening the file!" << std::endl;
         return 1;
     }
 
@@ -330,7 +307,7 @@ int checkFileAvailability(string file)
     return 0;
 }
 
-void stripWhiteSpace(string &line, vector<string> &result)
+void stripWhiteSpace(std::string &line, std::vector<std::string> &result)
 {
     result.clear();
 #ifndef USE_LIST
@@ -354,85 +331,85 @@ void stripWhiteSpace(string &line, vector<string> &result)
     }
 }
 
-Student processStudentRow(vector<string> studentRow)
+Student processStudentRow(std::vector<std::string> studentRow)
 {
 
     assert(!(studentRow.size() == 0));
 
     Student student;
-    string firstname = studentRow[0];
-    string lastname = studentRow[1];
+    std::string firstname = studentRow[0];
+    std::string lastname = studentRow[1];
 
-    student.firstName = firstname;
-    student.lastName = lastname;
+    student.setFirstName(firstname);
+    student.setLastName(lastname);
 
     for (std::size_t i = 2; i < studentRow.size(); i++)
     {
-        double tempGrade = stoi(studentRow[i]);
+        double tempGrade = std::stoi(studentRow[i]);
         if (i + 1 == studentRow.size())
         {
-            student.exam = tempGrade;
+            student.setExam(tempGrade);
         }
         else
         {
 
-            student.grades.push_back(tempGrade);
+            student.addGrade(tempGrade);
         }
     }
 
     return student;
 }
 
-void generateRandomStudentFile(string fileName, int numOfLines)
+void generateRandomStudentFile(std::string fileName, int numOfLines)
 {
-    ofstream f(fileName);
+    std::ofstream f(fileName);
     if (!f.is_open())
     {
-        cout << "Error creating file!" << fileName << endl;
+        std::cout << "Error creating file!" << fileName << std::endl;
         return;
     }
 
     // create header
-    f << left << setw(15) << "Name" << setw(15) << "Surname";
+    f << std::left << std::setw(15) << "Name" << std::setw(15) << "Surname";
     for (int i = 0; i < 5; ++i)
-        f << setw(5) << "HM" + to_string(i + 1);
-    f << setw(5) << "Exam" << '\n';
+        f << std::setw(5) << "HM" + std::to_string(i + 1);
+    f << std::setw(5) << "Exam" << '\n';
 
     for (int i = 0; i < numOfLines; ++i)
     {
-        f << left << setw(15) << "Name" + to_string(i + 1)
-          << setw(15) << "Surname" + to_string(i + 1);
+        f << std::left << std::setw(15) << "Name" + std::to_string(i + 1)
+          << std::setw(15) << "Surname" + std::to_string(i + 1);
 
         for (int j = 0; j < 5; ++j)
         {
-            f << setw(5) << getRandomGrade();
+            f << std::setw(5) << getRandomGrade();
         }
-        f << setw(5) << getRandomGrade() << '\n';
+        f << std::setw(5) << getRandomGrade() << '\n';
     }
 
     f.close();
-    cout << endl;
-    cout << "File " << fileName << " is successfully created." << '\n';
+    std::cout << std::endl;
+    std::cout << "File " << fileName << " is successfully created." << '\n';
 }
 
 void loadStudentsFromFile(StudentContainer &students, std::string fileName)
 {
-    ifstream file(fileName);
+    std::ifstream file(fileName);
 
-    size_t numOfLines = count(istreambuf_iterator<char>(file), istreambuf_iterator<char>(), '\n');
+    size_t numOfLines = std::count(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>(), '\n');
 
     file.clear();
     file.seekg(0);
 
-    string curLine;
-    getline(file, curLine); // skip header
+    std::string curLine;
+    std::getline(file, curLine); // skip header
     if (numOfLines > 0)
         --numOfLines;
 #ifndef USE_LIST
     students.reserve(numOfLines);
 #endif
 
-    vector<string> row;
+    vector<std::string> row;
 
     while (getline(file, curLine))
     {
@@ -443,16 +420,16 @@ void loadStudentsFromFile(StudentContainer &students, std::string fileName)
 
         stripWhiteSpace(curLine, row);
         Student student = processStudentRow(row);
-        students.push_back(move(student));
+        students.push_back(std::move(student));
     }
 }
 
-void createStudentFile(StudentContainer &studentList, string fileName)
+void createStudentFile(StudentContainer &studentList, std::string fileName)
 {
-    ofstream f(fileName);
+    std::ofstream f(fileName);
     if (!f.is_open())
     {
-        cout << "Error creating file!" << fileName << "\n";
+        std::cout << "Error creating file!" << fileName << "\n";
         return;
     }
 
@@ -462,6 +439,6 @@ void createStudentFile(StudentContainer &studentList, string fileName)
         f << formatStudentRow(student, "m");
     }
     f.close();
-    cout << "\n";
-    cout << "File " << fileName << " is successfully created." << "\n";
+    std::cout << "\n";
+    std::cout << "File " << fileName << " is successfully created." << "\n";
 }
