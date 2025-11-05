@@ -409,7 +409,7 @@ void loadStudentsFromFile(StudentContainer &students, std::string fileName)
     students.reserve(numOfLines);
 #endif
 
-    vector<std::string> row;
+    std::vector<std::string> row;
 
     while (getline(file, curLine))
     {
