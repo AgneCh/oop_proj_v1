@@ -6,8 +6,30 @@
 ### Studentų rūšiavimas į dvi kategorijas naudojant 2 strategiją (vid.):
 | Įrašų kiekis | `struct Student` (s) | `class Student` (s) | 
 |--------------|----------------------|---------------------| 
-| 100 000      | 0.00330035           | 
-| 1 000 000    | 0.0363789            | 
+| 100 000      | 0.00224749           | 0.00189308
+| 1 000 000    | 0.0363789            | 0.035765
+
+### `struct Student` rūšiavimas į dvi kategorijas naudojant 2 strategiją (vid.):
+| Įrašų kiekis | -O0 (s)       | -O2 (s)       | -O3 (s)|
+|--------------|---------------|---------------|--------| 
+| 100 000      |     |     |
+| 1 000 000    |      |       |
+
+### `class Student` rūšiavimas į dvi kategorijas naudojant 2 strategiją (vid.):
+| Įrašų kiekis | -O0 (s)       | -O2 (s)       | -O3 (s)     |
+|--------------|---------------|---------------|-------------| 
+| 100 000      | 0.00723901    | 0.00154923    | 0.00169285
+| 1 000 000    | 0.0887853     | 0.0349026     | 0.0355029
+
+### Failo dydžio palyginimas
+| Versija | OPT lygis | Dydis failo sistemoje |
+|---------|-----------|-----------------------|
+| struct  | -O0       |  ??? K                |
+| struct  | -O2       |  ??? K                |
+| struct  | -O3       |  ??? K                |
+| class   | -O0       |  180 K                |
+| class   | -O2       |  112 K                |
+| class   | -O3       |  132 KB               |
 
 
 # Programos diegimo instrukcija (Unix / Ubuntu OS)
