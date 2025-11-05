@@ -1,12 +1,20 @@
-# oop_proj_1
+# oop_proj_v1
+
+
+# (v1.1)
+
+### Studentų rūšiavimas į dvi kategorijas naudojant 2 strategiją (vid.):
+| Įrašų kiekis | `struct Student` (s) | `class Student` (s) | 
+|--------------|----------------------|---------------------| 
+| 100 000      | 0.00330035           | 
+| 1 000 000    | 0.0363789            | 
+
 
 # Programos diegimo instrukcija (Unix / Ubuntu OS)
 ### Reikalavimai
 Programai reikalinga:
 - C++17 versijos kompiliatorius (`g++`)
 - `make` įrankis
-
-
 
 ### Programos kompiliavimas
 - Kompiliuoti su std::vector konteineriu: make arba make vector
