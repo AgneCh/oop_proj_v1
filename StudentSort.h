@@ -6,7 +6,7 @@
 #include <algorithm>
 
 std::string_view getNameLetters(const std::string &s);
-int getNameNumber(const string &s);
+int getNameNumber(const std::string &s);
 bool compareStudentNames(const Student &a, const Student &b);
 bool compareStudentGrades(const Student &a, const Student &b);
 void categorizeStudents_1(StudentContainer &allStudents,

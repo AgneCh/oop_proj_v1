@@ -8,12 +8,6 @@
 #include <algorithm>
 #include <chrono>
 
-using std::cin;
-using std::cout;
-using std::invalid_argument;
-using std::to_string;
-using std::vector;
-
 int main()
 {
 #ifdef USE_VECTOR
@@ -25,7 +19,7 @@ int main()
 #endif
 
     using namespace std::chrono;
-    string mode;
+    std::string mode;
     StudentContainer students;
     bool showAddressForConsole = false;
 
@@ -42,7 +36,7 @@ int main()
 
             if (students.size() == 0)
             {
-                cout << "No student data found in the system!" << "\n";
+                std::cout << "No student data found in the system!" << "\n";
                 continue;
             }
             getModeChoice(mode);
@@ -54,16 +48,16 @@ int main()
         }
         else if (menuChoice == 3) // Insert student data from a file
         {
-            string fileName;
-            cout << "Enter file name in the following format: fileName.txt" << "\n";
+            std::string fileName;
+            std::cout << "Enter file name in the following format: fileName.txt" << "\n";
             while (true)
             {
-                cin >> fileName;
+                std::cin >> fileName;
                 if (checkFileAvailability(fileName) == 0)
                 {
                     break;
                 }
-                cout << "Enter correct file name!" << "\n";
+                std::cout << "Enter correct file name!" << "\n";
             }
             // auto t0 = steady_clock::now();
             loadStudentsFromFile(students, fileName);
@@ -73,9 +67,9 @@ int main()
             students.shrink_to_fit();
 #endif
 
-            cout << "\n";
-            cout << "Student data is uploaded to the system." << "\n";
-            cout << "\n";
+            std::cout << "\n";
+            std::cout << "Student data is uploaded to the system." << "\n";
+            std::cout << "\n";
 #ifdef USE_LIST
             students.sort(compareStudentNames);
 
@@ -83,13 +77,13 @@ int main()
             sort(students.begin(), students.end(), compareStudentNames);
 #endif
 
-            cout << "\n";
+            std::cout << "\n";
             for (auto &s : students)
             {
                 s = calcFinalGrade(s);
             }
             printStudents(students, "b");
-            cout << "\n";
+            std::cout << "\n";
             // cout << fileName + " file was uploaded in: " << secUpload << " s using " << getContainerName() << "\n";
         }
         else if (menuChoice == 4) // Generate random student file
@@ -97,12 +91,12 @@ int main()
             StudentContainer studentData;
 
             int fileLenght;
-            string fileName;
-            string usrInput;
+            std::string fileName;
+            std::string usrInput;
             while (true)
             {
-                cout << "How many student records would you like to generate? ";
-                cin >> usrInput;
+                std::cout << "How many student records would you like to generate? ";
+                std::cin >> usrInput;
 
                 size_t parsed = 0;
 
@@ -111,19 +105,19 @@ int main()
                     fileLenght = stoi(usrInput, &parsed);
                     if (parsed != usrInput.size())
                     {
-                        cout << "Invalid input!" << "\n";
+                        std::cout << "Invalid input!" << "\n";
                         continue;
                     }
                     break;
                 }
                 catch (const std::invalid_argument &err)
                 {
-                    cout << "Invalid input!" << "\n";
+                    std::cout << "Invalid input!" << "\n";
                     continue;
                 }
             }
 
-            fileName = "Student" + to_string(fileLenght) + ".txt";
+            fileName = "Student" + std::to_string(fileLenght) + ".txt";
 
             // measure execution time
             // auto t0 = steady_clock::now();
@@ -136,17 +130,17 @@ int main()
             StudentContainer studentData;
             StudentContainer strugglers;
             StudentContainer highAchievers;
-            string fileName;
-            string sortChoice;
-            cout << "Enter file name in the following format: fileName.txt" << "\n";
+            std::string fileName;
+            std::string sortChoice;
+            std::cout << "Enter file name in the following format: fileName.txt" << "\n";
             while (true)
             {
-                cin >> fileName;
+                std::cin >> fileName;
                 if (checkFileAvailability(fileName) == 0)
                 {
                     break;
                 }
-                cout << "Enter correct file name!" << "\n";
+                std::cout << "Enter correct file name!" << "\n";
             }
 
             // auto t0 = steady_clock::now();
@@ -156,9 +150,9 @@ int main()
 #ifndef USE_LIST
             studentData.shrink_to_fit();
 #endif
-            cout << "\n";
-            cout << "Student data is uploaded to the system." << "\n";
-            cout << "\n";
+            std::cout << "\n";
+            std::cout << "Student data is uploaded to the system." << "\n";
+            std::cout << "\n";
 
             for (auto &s : studentData)
             {
@@ -180,12 +174,12 @@ int main()
             // auto secSorted = duration_cast<duration<double>>(steady_clock::now() - t0).count();
             // cout << fileName + " sorted in to two groups in: " << secSorted << " s using " << getContainerName() << "\n";
 
-            cout << "To sort categorized files by name type 'n' or 'g' to sort by grade: " << "\n";
+            std::cout << "To sort categorized files by name type 'n' or 'g' to sort by grade: " << "\n";
 
             while (true)
 
             {
-                cin >> sortChoice;
+                std::cin >> sortChoice;
 
                 if (sortChoice == "n")
 
@@ -215,7 +209,7 @@ int main()
                     break;
                 }
 
-                cout << "Invalid choice!\n";
+                std::cout << "Invalid choice!\n";
             }
 
             // t0 = steady_clock::now();
