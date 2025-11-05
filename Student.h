@@ -30,7 +30,6 @@ public:
     void setFirstName(std::string v) { firstName_ = std::move(v); }
     void setLastName(std::string v) { lastName_ = std::move(v); }
     void addGrade(int g) { grades_.push_back(g); }
-    void setGrades(std::vector<int> g) { grades_ = std::move(g); }
     void setExam(int e) { exam_ = e; }
     void setFinalMean(double v) { finalGradeMean_ = v; }
     void setFinalMedian(double v) { finalGradeMedian_ = v; }

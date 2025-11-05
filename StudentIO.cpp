@@ -336,12 +336,10 @@ Student processStudentRow(std::vector<std::string> studentRow)
 
     assert(!(studentRow.size() == 0));
 
-    Student student;
     std::string firstname = studentRow[0];
     std::string lastname = studentRow[1];
 
-    student.setFirstName(firstname);
-    student.setLastName(lastname);
+    Student student(firstname, lastname);
 
     for (std::size_t i = 2; i < studentRow.size(); i++)
     {
