@@ -33,6 +33,8 @@ public:
     void setExam(int e) { exam_ = e; }
     void setFinalMean(double v) { finalGradeMean_ = v; }
     void setFinalMedian(double v) { finalGradeMedian_ = v; }
+
+    ~Student() {}
 };
 
 #ifdef USE_LIST
