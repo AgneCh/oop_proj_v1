@@ -2,8 +2,8 @@
 #include <algorithm>
 #include <random>
 using std::mt19937;
-using std::uniform_int_distribution;
 using std::random_device;
+using std::uniform_int_distribution;
 
 int getRandomGrade()
 {
@@ -12,7 +12,7 @@ int getRandomGrade()
     return dist(gen);
 }
 
-double hwMean(const std::vector<int>& grades)
+double hwMean(const std::vector<int> &grades)
 {
     if (grades.empty())
     {
@@ -32,7 +32,7 @@ double hwMedian(std::vector<int> grades)
         return 0.0;
     }
 
-    sort(grades.begin(), grades.end());
+    std::sort(grades.begin(), grades.end());
     int n = grades.size();
     if (n % 2 != 0)
     {
@@ -46,11 +46,11 @@ double hwMedian(std::vector<int> grades)
 
 Student calcFinalGrade(Student student)
 {
-    const double mean = hwMean(student.grades);
-    const double median = hwMedian(student.grades);
+    const double mean = hwMean(student.grades());
+    const double median = hwMedian(student.grades());
 
-    student.finalGradeMean = 0.4 * mean + 0.6 * student.exam;
-    student.finalGradeMedian = 0.4 * median + 0.6 * student.exam;
+    student.setFinalMean(0.4 * mean + 0.6 * student.exam());
+    student.setFinalMedian(0.4 * median + 0.6 * student.exam());
 
     return student;
 }
