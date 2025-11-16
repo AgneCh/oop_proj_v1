@@ -19,6 +19,17 @@ public:
     Student() = default;
     Student(std::string firstN, std::string lastN) : firstName_(std::move(firstN)), lastName_(std::move(lastN)) {}
 
+    // Copy constructor
+    Student(const Student &other) : firstName_(other.firstName_),
+                                    lastName_(other.lastName_),
+                                    grades_(other.grades_),
+                                    exam_(other.exam_),
+                                    finalGradeMean_(other.finalGradeMean_),
+                                    finalGradeMedian_(other.finalGradeMedian_)
+    {
+        std::cout << "Copy constructor is called\n";
+    }
+
     // Getters
     const std::string &firstName() const { return firstName_; }
     const std::string &lastName() const { return lastName_; }

@@ -2,6 +2,7 @@
 #include "GradeCalc.h"
 #include "StudentSort.h"
 #include "StudentIO.h"
+#include "RuleOfThree.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -59,9 +60,8 @@ int main()
                 }
                 std::cout << "Enter correct file name!" << "\n";
             }
-            // auto t0 = steady_clock::now();
+
             loadStudentsFromFile(students, fileName);
-            // auto secUpload = duration_cast<duration<double>>(steady_clock::now() - t0).count();
 
 #ifndef USE_LIST
             students.shrink_to_fit();
@@ -84,7 +84,6 @@ int main()
             }
             printStudents(students, "b");
             std::cout << "\n";
-            // cout << fileName + " file was uploaded in: " << secUpload << " s using " << getContainerName() << "\n";
         }
         else if (menuChoice == 4) // Generate random student file
         {
@@ -119,11 +118,7 @@ int main()
 
             fileName = "Student" + std::to_string(fileLenght) + ".txt";
 
-            // measure execution time
-            // auto t0 = steady_clock::now();
             generateRandomStudentFile(fileName, fileLenght);
-            // auto secCreate = duration_cast<duration<double>>(steady_clock::now() - t0).count();
-            // cout << "Student" + to_string(fileLenght) + ".txt file was generated in: " << secCreate << " s using " << getContainerName() << "\n";
         }
         else if (menuChoice == 5) // sort student list into categories
         {
@@ -143,10 +138,8 @@ int main()
                 std::cout << "Enter correct file name!" << "\n";
             }
 
-            // auto t0 = steady_clock::now();
             loadStudentsFromFile(studentData, fileName);
-            // auto secLoad = duration_cast<duration<double>>(steady_clock::now() - t0).count();
-            // cout << "Uploaded" + fileName + " in: " << secLoad << " s using " << getContainerName() << "\n";
+
 #ifndef USE_LIST
             studentData.shrink_to_fit();
 #endif
@@ -163,16 +156,12 @@ int main()
             std::cout << "Choose categorization stategy (1, 2 or 3): ";
             std::cin >> choice;
 
-            // t0 = steady_clock::now();
             if (choice == 1)
                 categorizeStudents_1(studentData, strugglers, highAchievers);
             else if (choice == 2)
                 categorizeStudents_2(studentData, strugglers, highAchievers);
             else
                 categorizeStudents_3(studentData, strugglers, highAchievers);
-
-            // auto secSorted = duration_cast<duration<double>>(steady_clock::now() - t0).count();
-            // cout << fileName + " sorted in to two groups in: " << secSorted << " s using " << getContainerName() << "\n";
 
             std::cout << "To sort categorized files by name type 'n' or 'g' to sort by grade: " << "\n";
 
@@ -212,11 +201,12 @@ int main()
                 std::cout << "Invalid choice!\n";
             }
 
-            // t0 = steady_clock::now();
             createStudentFile(strugglers, "strugglers.txt");
             createStudentFile(highAchievers, "highAchievers.txt");
-            // auto sec = duration_cast<duration<double>>(steady_clock::now() - t0).count();
-            // cout << "Categorized files were created in: " << sec << " s using " << getContainerName() << "\n";
+        }
+        else if (menuChoice == 6) // rule of three
+        {
+            testRuleOfThree();
         }
         else
         {
