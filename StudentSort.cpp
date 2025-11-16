@@ -67,7 +67,7 @@ void categorizeStudents_2(StudentContainer &allStudents, StudentContainer &below
     for (auto it = allStudents.begin(); it != allStudents.end();)
     {
         auto cur = it++;
-        if (cur->finalGradeMean < 5.0)
+        if (cur->finalMean() < 5.0)
             belowFive.splice(belowFive.end(), allStudents, cur);
     }
 
@@ -97,7 +97,7 @@ void categorizeStudents_2(StudentContainer &allStudents, StudentContainer &below
 void categorizeStudents_3(StudentContainer &allStudents, StudentContainer &belowFive, StudentContainer &fiveAndUp)
 {
 #ifdef USE_LIST
-    auto isBelow5 = [](const Student& s){ return s.finalGradeMean < 5.0; };
+    auto isBelow5 = [](const Student& s){ return s.finalMean() < 5.0; };
     auto mid = std::partition(allStudents.begin(), allStudents.end(), isBelow5);
     belowFive.splice(belowFive.end(), allStudents, allStudents.begin(), mid);
 

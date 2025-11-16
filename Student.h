@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include <vector>
 #include <list>
@@ -39,8 +40,6 @@ public:
         firstName_.clear();
         lastName_.clear();
         grades_.clear();
-
-        std::cout << "Object destroyed\n";
     }
 };
 
