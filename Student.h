@@ -30,6 +30,22 @@ public:
         std::cout << "Copy constructor is called\n";
     }
 
+    // Copy assigment operator
+    Student &operator=(const Student &other)
+    {
+        if (this != &other)
+        {
+            firstName_ = other.firstName_;
+            lastName_ = other.lastName_;
+            grades_ = other.grades_;
+            exam_ = other.exam_;
+            finalGradeMean_ = other.finalGradeMean_;
+            finalGradeMedian_ = other.finalGradeMedian_;
+        }
+        std::cout << "Copy assigment operator is called\n";
+        return *this;
+    }
+
     // Getters
     const std::string &firstName() const { return firstName_; }
     const std::string &lastName() const { return lastName_; }

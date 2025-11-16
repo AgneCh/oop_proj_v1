@@ -8,19 +8,18 @@ void testRuleOfThree()
     s1.addGrade(8);
     s1.setExam(9);
 
-    Student s2 = s1;
-    Student s3;
-    s3 = s1;
-
     // s1.setFirstName("Modified");
     // s1.addGrade(9);
 
     std::cout << "[Original student s1]\n";
     printStudentInfo(s1);
 
+    Student s2 = s1;
     std::cout << "[Student copy s2 (copy constructor)]\n";
     printStudentInfo(s2);
 
+    Student s3;
+    s3 = s1;
     std::cout << "[Student copy s3 (assignment operator)]\n";
     printStudentInfo(s3);
 }
