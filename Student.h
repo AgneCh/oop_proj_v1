@@ -34,7 +34,14 @@ public:
     void setFinalMean(double v) { finalGradeMean_ = v; }
     void setFinalMedian(double v) { finalGradeMedian_ = v; }
 
-    ~Student() {}
+    ~Student()
+    {
+        firstName_.clear();
+        lastName_.clear();
+        grades_.clear();
+
+        std::cout << "Object destroyed\n";
+    }
 };
 
 #ifdef USE_LIST
