@@ -29,8 +29,27 @@ int main()
         int menuChoice = getUserMenuChoice();
         if (menuChoice == 1) // Add new student
         {
-            showAddressForConsole = true;
-            students.push_back(getUserStudentInput());
+            std::cout << "Choose input method: \n1. Step-by-step entry\n2. Quick entry (stream operator)\n";
+            int inputMethod;
+            std::cin >> inputMethod;
+            Student s;
+
+            if (inputMethod == 1)
+            {
+                showAddressForConsole = true;
+                s = getUserStudentInput();
+                students.push_back(s);
+            }
+            else
+            {
+                std::cout << "Enter student data:\n";
+                std::cout << "Format: FirstName LastName hw1 hw2 hw3 ... exam\n";
+
+                std::cin >> s;
+                students.push_back(s);
+            }
+            std::cout << "\nNew student is added:\n";
+            std::cout << s << "\n";
         }
         else if (menuChoice == 2) // Calculate grades
         {

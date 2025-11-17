@@ -12,6 +12,43 @@
 #include <iterator>
 #include <sstream>
 
+std::istream &operator>>(std::istream &in, Student &s)
+{
+    in >> s.firstName_ >> s.lastName_;
+
+    std::vector<int> allGrades;
+    int grade;
+
+    while (in >> grade)
+    {
+
+        allGrades.push_back(grade);
+
+        // stop if newline
+        if (in.peek() == '\n')
+        {
+            break;
+        }
+    }
+
+    if (!allGrades.empty())
+    {
+        s.exam_ = allGrades.back(); // the last grade is the exam grade
+        allGrades.pop_back();
+        s.grades_ = allGrades;
+    }
+    return in;
+}
+
+std::ostream &operator<<(std::ostream &out, const Student &s)
+{
+    out << s.firstName() << " " << s.lastName() << " | Grades: ";
+    for (int g : s.grades())
+        out << g << " ";
+    out << "| Exam: " << s.exam();
+    return out;
+}
+
 std::string createHeader(const std::string &mode, bool showAddress)
 {
     std::ostringstream header;

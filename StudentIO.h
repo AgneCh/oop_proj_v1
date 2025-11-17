@@ -8,6 +8,10 @@ Student getUserStudentInput();
 int getUserMenuChoice();
 void getModeChoice(std::string& mode);
 
+// inour/output stream overloads
+std::istream& operator>>(std::istream& in, Student& s);
+std::ostream& operator<<(std::ostream& out, const Student& s);
+
 // formatting
 std::string createHeader(const std::string& mode, bool showAddress = false);
 std::string formatStudentRow(const Student& student, const std::string& mode, bool showAddress = false);

@@ -14,6 +14,9 @@ private:
     double finalGradeMean_{0.0};
     double finalGradeMedian_{0.0};
 
+    friend std::istream &operator>>(std::istream &in, Student &s);
+    friend std::ostream &operator<<(std::ostream &out, const Student &s);
+
 public:
     // Constructors
     Student() = default;
@@ -67,6 +70,7 @@ public:
         firstName_.clear();
         lastName_.clear();
         grades_.clear();
+        std::cout << "Student object destroyed \n";
     }
 };
 
