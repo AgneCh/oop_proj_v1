@@ -64,13 +64,14 @@ Failas išsaugomas ir vartotojui išvedama žinutė, kad generavimas pavyko.
 
 ## Duomenų išvedimo būdai:
 
-### Duomenų išvedim į ekraną
+### Duomenų išvedimas į ekraną
 Kaip ir minėta ankščiau, programa atspausdina rankiniu būdu įvesto studento duomenis:  
 ![alt text](./screenshots/printTerminal2.png)  
 
 Programa taip pat atpsausdina studentų sąrašą vartotojui pasirinkus galutinio balo apskaičiavimą:  
-![alt text](./screenshots/printTerminal.png)
+![alt text](./screenshots/printTerminal.png)  
 
-### Duomenų išvedim į failą
-
-
+### Duomenų išvedimas į failą
+Studentų sąrašas išvedamas į failą vartotojui pasirinkus surūšiuoti studentus į dvi grupes: "vargšiukus (strugglers)" ir "kietiakius (highachievers)".  
+![alt text](./screenshots/highachieversTXT.png)
+![alt text](./screenshots/strugglersTXT.png)

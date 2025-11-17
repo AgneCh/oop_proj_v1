@@ -70,8 +70,11 @@ std::string createHeader(const std::string &mode, bool showAddress)
                << std::setw(wLastName) << "Last name"
                << std::setw(wGrade) << "Final grade (mean)" << '\n';
         // -- separator line --
-        header << std::setfill('-')
-               << std::setw(wFirsName) << ""
+        header << std::setfill('-');
+        if (showAddress)
+            header << std::setw(18) << "";
+
+        header << std::setw(wFirsName) << ""
                << std::setw(wLastName) << ""
                << std::setw(wGrade) << "" << '\n'
                << std::setfill(' ');
@@ -85,8 +88,12 @@ std::string createHeader(const std::string &mode, bool showAddress)
                << std::setw(wGrade) << "Final grade (median)" << '\n';
 
         // -- separator line --
-        header << std::setfill('-')
-               << std::setw(wFirsName) << ""
+
+        header << std::setfill('-');
+        if (showAddress)
+            header << std::setw(18) << "";
+
+        header << std::setw(wFirsName) << ""
                << std::setw(wLastName) << ""
                << std::setw(wGrade) << "" << '\n'
                << std::setfill(' ');
@@ -101,8 +108,11 @@ std::string createHeader(const std::string &mode, bool showAddress)
                << std::setw(wGrade) << "Final grade (median)" << '\n';
 
         // -- separator line --
-        header << std::setfill('-')
-               << std::setw(wFirsName) << ""
+        header << std::setfill('-');
+        if (showAddress)
+            header << std::setw(18) << "";
+
+        header << std::setw(wFirsName) << ""
                << std::setw(wLastName) << ""
                << std::setw(wGrade) << ""
                << std::setw(wGrade) << "" << '\n'
