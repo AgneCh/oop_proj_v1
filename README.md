@@ -29,7 +29,7 @@ Destruktorius iškviečiamas, kai Student objektas sunaikinamas.
 
 ## Duomenų įvedimo būdai:
 
-### 1.1 Rankinis duomenų įvedimas
+### Rankinis duomenų įvedimas
 Vartotojas gauna du suvedimo rankiniu būdu pasirinkimus:
 1. Suvedimas pažingsniui (t.y. progama klausia vardo, pavardės ir t.t.)
 2. Suvesti duomenis į vieną eilutę.
@@ -43,7 +43,7 @@ Pasirinkęs **2.**, vartotojas suveda vardą, pavardę, namų darbų ir egzamino
 Abejais atvėjais po duomenų įvedimo, programa atspausdina pridėto studento duomenis ekrane (realizuota su **Išvesties operatoriumi**).  
 ![alt text](./screenshots/newStudPrint.png)
 
-### 1.2 Įvedimas iš TXT failo
+### Įvedimas iš TXT failo
 Programa gali nuskaityti studentų duomenis iš failo:  
 - failas nuskaitomas eilutė po eilutės
 - duomenys išskaidomi ir iš jų sukuriami Student objektai.
@@ -51,7 +51,7 @@ Programa gali nuskaityti studentų duomenis iš failo:
 Failo formatas:  
 ![alt text](./screenshots/txtFile.png)
 
-### 1.3 Automatinis duomenų generavimas
+### Automatinis duomenų generavimas
 Programa turi funkciją **generateRandomStudentFile()**, kuri automatiškai sukuria tekstinį failą su atsitiktiniais studentų duomenimis.  
 
 Funkcija sukuria naują failą pavadinimu "Student{ivesties_skaičius}.txt".  
@@ -62,11 +62,15 @@ Toliau automatiškai sugeneruojama tiek eilučių, kiek nurodo vartotojas.
 Kiekvienam studentui vardas ir pavardė generuojami pagal šabloną NameX, SurnameX. 5 namų darbų balai generuojami naudojant getRandomGrade(), egzamino balas taip pat sugeneruojamas atsitiktinai.  
 Failas išsaugomas ir vartotojui išvedama žinutė, kad generavimas pavyko.  
 
-### 2. Duomenų išvedimo būdai:
+## Duomenų išvedimo būdai:
 
-- **Į ekraną**: studentų duomenys rodomi konsolėje, suformatuoti lentelės pavidalu.
-- **Į failą**: sugeneruojamas tekstins failas su studentų duomenimis.
+### Duomenų išvedim į ekraną
+Kaip ir minėta ankščiau, programa atspausdina rankiniu būdu įvesto studento duomenis:  
+![alt text](./screenshots/printTerminal2.png)  
+
+Programa taip pat atpsausdina studentų sąrašą vartotojui pasirinkus galutinio balo apskaičiavimą:  
+![alt text](./screenshots/printTerminal.png)
+
+### Duomenų išvedim į failą
 
 
-
-Duomenų išvedimas į ekraną

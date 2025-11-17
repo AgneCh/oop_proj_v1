@@ -30,7 +30,7 @@ public:
                                     finalGradeMean_(other.finalGradeMean_),
                                     finalGradeMedian_(other.finalGradeMedian_)
     {
-        std::cout << "Copy constructor is called\n";
+        // std::cout << "Copy constructor is called\n";
     }
 
     // Copy assigment operator
@@ -45,7 +45,7 @@ public:
             finalGradeMean_ = other.finalGradeMean_;
             finalGradeMedian_ = other.finalGradeMedian_;
         }
-        std::cout << "Copy assigment operator is called\n";
+        // std::cout << "Copy assigment operator is called\n";
         return *this;
     }
 
@@ -70,7 +70,7 @@ public:
         firstName_.clear();
         lastName_.clear();
         grades_.clear();
-        std::cout << "Student object destroyed \n";
+        // std::cout << "Student object destroyed \n";
     }
 };
 
