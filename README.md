@@ -27,21 +27,32 @@ Destruktorius iškviečiamas, kai Student objektas sunaikinamas.
 **Išvesties operatorius** leižia Student objektą išvesti į konsolę naudojant `std::cout`.
 
 
-## Programos funkcionalumas
+## Duomenų įvedimo būdai:
 
-### 1. Duomenų įvedimo būdai:
+### 1.1 Rankinis duomenų įvedimas
+Varotojas gauna du suvedimo rankiniu būdu pasirinkimus:
+1. Suvedimas pažingsniui (t.y. progama klausia vardo, pavardės ir t.t.)
+2. Suvesti duomenis į vieną eilutę.
 
-1. **Rankiniu būdu**: vartotojas pats suveda studento vardą, pavardę, namų darbų ir egzamino balus.
-2. **Automatiškai**: programa sugeneruoja atsitiktinius duomenis nurodytam studentų kiekiui.
-3. **Iš failo**: studentų duomenys nuskaitomi iš tekstinio failo (pvz., `studentai.txt`).
+Pasirinkęs **1.**, varotojas taip pat gali suvesti atsitiktinai generuojamus balus.
+![](./screenshots/manualUserInput1.png)
+
+Pasirinkęs **2.**, varotojas suveda vardą, pavardę, namų darbų ir egzamino balus į vieną eilutę. Tai progamoje realizuota su **įvesties operatorium**.
+![](./screenshots/manualUserInput2.png)
+
+Abejais atvėjais po duomenų įvedimo, programa atspausdina pridėto studento duomenis ekrane (realizuota su **Išvesties operatoriumi**).
+![alt text](./screenshots/newStudPrint.png)
+
+### 1.2 Įvedimas iš TXT failo
+
+### 1.3 Automatinis duomenų generavimas
+
 
 ### 2. Duomenų išvedimo būdai:
 
 - **Į ekraną**: studentų duomenys rodomi konsolėje, suformatuoti lentelės pavidalu.
 - **Į failą**: sugeneruojamas tekstins failas su studentų duomenimis.
 
-### 1.1 Rankinis duomenų įvedimas
 
 
-
-
+Duomenų išvedimas į ekraną
