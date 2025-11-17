@@ -11,7 +11,7 @@
 
 Student.h faile, Student klasėje sukurtos šios dalys:
 `Kopijavimo konstruktorius (copy constructor)`
-Konstruktorius perkelia visas kito objekto reikšmes į naujai kuriamą objektą. Taip užtrikrinama, kad naujai sukurtas objektas turi identiškus duomenis, tačiau yra atskiras objektas atmintyje.
+|Konstruktorius perkelia visas kito objekto reikšmes į naujai kuriamą objektą. Taip užtrikrinama, kad naujai sukurtas objektas turi identiškus duomenis, tačiau yra atskiras objektas atmintyje.|
 ![alt text](./screenshots/copyConstructor.png)
 
 `Kopijavimo priskirties operatorius (copy assignassigment operator)`
@@ -21,6 +21,10 @@ Kopijavimo priskirties operatorius naudojamas tada, kai jau egzistuojančiam Stu
 `Destruktorius (destructor)`
 Destruktorius iškviečiamas, kai Student objektas sunaikinamas.
 ![alt text](./screenshots/destructor.png)
+
+### Įvestie/išvesties operatoriai
+`Kopijavimo konstruktorius (copy constructor)`
+
 
 ## Programos funkcionalumas
 
