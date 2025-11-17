@@ -10,8 +10,7 @@
 ### Rule of three
 
 Student.h faile, Student klasėje sukurtos šios dalys:
-|`Kopijavimo konstruktorius (copy constructor)`|
-|Konstruktorius perkelia visas kito objekto reikšmes į naujai kuriamą objektą. Taip užtrikrinama, kad naujai sukurtas objektas turi identiškus duomenis, tačiau yra atskiras objektas atmintyje.|
+|`Kopijavimo konstruktorius (copy constructor)`|Konstruktorius perkelia visas kito objekto reikšmes į naujai kuriamą objektą. Taip užtrikrinama, kad naujai sukurtas objektas turi identiškus duomenis, tačiau yra atskiras objektas atmintyje.|
 ![alt text](./screenshots/copyConstructor.png)
 
 `Kopijavimo priskirties operatorius (copy assignassigment operator)`
