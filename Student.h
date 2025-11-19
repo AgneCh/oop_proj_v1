@@ -1,32 +1,13 @@
 #pragma once
+#include "Human.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <list>
 
-class Human
-{
-protected:
-    std::string firstName_;
-    std::string lastName_;
-
-public:
-    Human() = default;
-    Human(const std::string &firstN, const std::string &lastN) : firstName_(firstN), lastName_(lastN) {}
-
-    ~Human(){
-        firstName_.clear();
-        lastName_.clear();
-    }
-
-    virtual void f() = 0;
-}
-
-class Student
+class Student : public Human
 {
 private:
-    std::string firstName_;
-    std::string lastName_;
     std::vector<int> grades_;
     int exam_{0};
     double finalGradeMean_{0.0};
@@ -38,11 +19,10 @@ private:
 public:
     // Constructors
     Student() = default;
-    Student(std::string firstN, std::string lastN) : firstName_(std::move(firstN)), lastName_(std::move(lastN)) {}
+    Student(std::string firstN, std::string lastN) : Human(std::move(firstN), std::move(lastN)) {}
 
     // Copy constructor
-    Student(const Student &other) : firstName_(other.firstName_),
-                                    lastName_(other.lastName_),
+    Student(const Student &other) : Human(other.firstName_, other.lastName_),
                                     grades_(other.grades_),
                                     exam_(other.exam_),
                                     finalGradeMean_(other.finalGradeMean_),
@@ -68,16 +48,16 @@ public:
     }
 
     // Getters
-    const std::string &firstName() const { return firstName_; }
-    const std::string &lastName() const { return lastName_; }
+    const std::string &firstName() const override { return firstName_; }
+    const std::string &lastName() const override { return lastName_; }
     const std::vector<int> &grades() const { return grades_; }
     int exam() const { return exam_; }
     double finalMean() const { return finalGradeMean_; }
     double finalMedian() const { return finalGradeMedian_; }
 
     // Setters
-    void setFirstName(std::string v) { firstName_ = std::move(v); }
-    void setLastName(std::string v) { lastName_ = std::move(v); }
+    void setFirstName(std::string v) override { firstName_ = std::move(v); }
+    void setLastName(std::string v) override { lastName_ = std::move(v); }
     void addGrade(int g) { grades_.push_back(g); }
     void setExam(int e) { exam_ = e; }
     void setFinalMean(double v) { finalGradeMean_ = v; }

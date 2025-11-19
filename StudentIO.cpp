@@ -23,7 +23,7 @@ std::istream &operator>>(std::istream &in, Student &s)
     {
         if (grade < 1 || grade > 10)
         {
-            std::cout << "Invalid grade: " << grade
+            std::cout << "\nInvalid grade: " << grade
                       << ".\nEnter correct grade as well as the remaining ones after: ";
 
             // print valid grades so far
@@ -313,8 +313,7 @@ int getUserMenuChoice()
 
     while (true)
     {
-        std::cout << "" << std::endl;
-        std::cout << "Choose a number from the menu:" << std::endl;
+        std::cout << "\n\nChoose a number from the menu:" << std::endl;
         std::cout << "1. Add new student" << std::endl;
         std::cout << "2. Calculate grades" << std::endl;
         std::cout << "3. Insert student data from a file" << std::endl;

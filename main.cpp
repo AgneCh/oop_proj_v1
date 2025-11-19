@@ -47,7 +47,7 @@ int main()
                 std::cin >> s;
                 students.push_back(s);
             }
-            std::cout << "\nNew student is added:\n";
+            std::cout << "\n\nNew student is added:\n";
             std::cout << s << "\n";
         }
         else if (menuChoice == 2) // Calculate grades
