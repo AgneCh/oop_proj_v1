@@ -1,5 +1,8 @@
 # 2 užduotis
 
+# (v1.5)
+Šioje programos versijoje sukurta `Human` abstrakti bazinė klasė ir iš jos išvesta `Student` klasė.
+
 
 # (v1.2)
 
