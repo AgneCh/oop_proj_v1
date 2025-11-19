@@ -2,7 +2,6 @@
 #include "GradeCalc.h"
 #include "StudentSort.h"
 #include "StudentIO.h"
-#include "RuleOfThree.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -222,10 +221,6 @@ int main()
 
             createStudentFile(strugglers, "strugglers.txt");
             createStudentFile(highAchievers, "highAchievers.txt");
-        }
-        else if (menuChoice == 6) // rule of three
-        {
-            testRuleOfThree();
         }
         else
         {

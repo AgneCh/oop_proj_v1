@@ -7,7 +7,7 @@ CXXFLAGS := -std=c++17 $(OPT) -Wall $(DEFINES)
 TARGET = student_program
 
 # Source files
-SRCS = main.cpp GradeCalc.cpp Student.cpp StudentIO.cpp StudentSort.cpp RuleOfThree.cpp
+SRCS = main.cpp GradeCalc.cpp Student.cpp StudentIO.cpp StudentSort.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # Default target

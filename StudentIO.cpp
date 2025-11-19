@@ -305,11 +305,10 @@ int getUserMenuChoice()
         std::cout << "3. Insert student data from a file" << std::endl;
         std::cout << "4. Generate random student file" << std::endl;
         std::cout << "5. Sort student data into categories" << std::endl;
-        std::cout << "6. Test the Rule of Three" << std::endl;
-        std::cout << "7. Exit" << std::endl;
+        std::cout << "6. Exit" << std::endl;
         std::cout << "" << std::endl;
         std::cin >> n;
-        if (n == 1 || n == 2 || n == 3 || n == 4 || n == 5 || n == 6 || n == 7)
+        if (n == 1 || n == 2 || n == 3 || n == 4 || n == 5 || n == 6)
         {
             return n;
         }
