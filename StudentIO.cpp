@@ -21,10 +21,25 @@ std::istream &operator>>(std::istream &in, Student &s)
 
     while (in >> grade)
     {
+        if (grade < 1 || grade > 10)
+        {
+            std::cout << "Invalid grade: " << grade
+                      << ".\nEnter correct grade as well as the remaining ones after: ";
+
+            // print valid grades so far
+            for (int g : allGrades)
+                std::cout << g << " ";
+
+            std::cout << "\n";
+
+            in.clear();
+            in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            continue;
+        }
 
         allGrades.push_back(grade);
 
-        // stop if newline
         if (in.peek() == '\n')
         {
             break;
