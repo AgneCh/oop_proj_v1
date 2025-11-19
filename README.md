@@ -1,7 +1,12 @@
 # 2 užduotis
 
 # (v1.5)
-Šioje programos versijoje sukurta `Human` abstrakti bazinė klasė ir iš jos išvesta `Student` klasė.
+Šioje programos versijoje sukurta abstrakti bazinė klasė ir jos išvestinė klasė.  
+
+**Bazinė klasė**: abstrakti klasė `Human`, kurioje aprašytos bendros žmogaus savybės (`firstName`, `lastName`) ir abstraktūs metodai.  
+![alt text](./screenshots/humanClass.png)  
+
+**Išvestinė klasė**: `Student`, kurioje realizuotos virtualios funkcijos, pridedi studentui būdingi laukai (`grades`, `exam`), bei metodai.  
 
 
 # (v1.2)
