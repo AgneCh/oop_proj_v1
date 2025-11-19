@@ -4,6 +4,24 @@
 #include <vector>
 #include <list>
 
+class Human
+{
+protected:
+    std::string firstName_;
+    std::string lastName_;
+
+public:
+    Human() = default;
+    Human(const std::string &firstN, const std::string &lastN) : firstName_(firstN), lastName_(lastN) {}
+
+    ~Human(){
+        firstName_.clear();
+        lastName_.clear();
+    }
+
+    virtual void f() = 0;
+}
+
 class Student
 {
 private:
