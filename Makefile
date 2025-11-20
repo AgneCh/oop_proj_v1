@@ -2,7 +2,7 @@
 CXX = g++
 OPT ?= -O2
 DEFINES ?=
-CXXFLAGS := -std=c++17 $(OPT) -Wall $(DEFINES)
+CXXFLAGS := -std=c++17 $(OPT) -Wall $(DEFINES) -I.
 
 TARGET = student_program
 
@@ -71,6 +71,7 @@ TEST_DIR      = test
 TEST_SRCS     = $(wildcard $(TEST_DIR)/*.cpp)
 
 TEST_PROGRAM_SRCS = GradeCalc.cpp Student.cpp StudentIO.cpp StudentSort.cpp $(TEST_SRCS)
+TEST_OBJS = $(TEST_PROGRAM_SRCS:.cpp=.o)
 
 # Name of test executable
 TEST_TARGET = test_runner
@@ -78,10 +79,13 @@ TEST_TARGET = test_runner
 test: $(TEST_TARGET)
 	./$(TEST_TARGET)
 
-$(TEST_TARGET): $(TEST_PROGRAM_SRCS)
+$(TEST_TARGET): $(TEST_OBJS)
 	$(CXX) $(CXXFLAGS) -I. -o $@ $^
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
 # Clean up compiled files
 clean:
-	rm -f $(OBJS) $(TARGET) $(TEST_TARGET)
+	rm -f $(OBJS) $(TEST_OBJS) $(TARGET) $(TEST_TARGET)
