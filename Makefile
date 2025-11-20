@@ -1,3 +1,11 @@
+#include <catch2/catch_all.hpp>
+
+# Catch2 unit testing
+TEST_DIR = test
+TEST_SRCS = $(wildcard $(TEST_DIR)/*.cpp)
+TEST_TARGET = test_runner
+
+
 # Compiler and flags
 CXX = g++
 OPT ?= -O2
@@ -23,7 +31,7 @@ $(TARGET): $(OBJS)
 
 # Clean up compiled files
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET) $(TEST_TARGET)
 
 # Convenience targets to build with either container type
 .PHONY: vector list o0 o3 vector-o0 vector-o2 vector-o3 list-o0 list-o2 list-o3
@@ -67,3 +75,13 @@ list-o2:
 list-o3:
 	$(MAKE) clean
 	$(MAKE) OPT=-O3 DEFINES="-DUSE_LIST" all
+
+# Build and run Catch2 tests
+TEST_OBJS = GradeCalc.cpp Student.cpp StudentIO.cpp StudentSort.cpp $(TEST_SRCS)
+
+test: $(TEST_TARGET)
+	./$(TEST_TARGET)
+
+$(TEST_TARGET): $(TEST_OBJS)
+	$(CXX) $(CXXFLAGS) -I. -o $@ $^
+
