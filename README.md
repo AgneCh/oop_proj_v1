@@ -19,25 +19,43 @@ make clean
 
 # Programos naudojimosi instrukcija
 
-Paleidus programą rodomas pasirikimų meniu:
+Paleidus programą rodomas pasirikimų meniu:  
 ![meniu](./screenshots/progMeniu.png)
 
 ## Įvesti studentų duomenis
+
+### Įvesti duomenis rankiniu būdu
 Įveskite ***skaičių 1***, kad suvesti studentų duomenis ***rankiniu būdų***.
 ![input1](./screenshots/input1.png)  
   
-Toliau, galima pasirinkti suvesti duomenis pažingsniui (***1***), kur programa pati paprašo studento vardo, pavardės ir t.t., arba duomenis suvesti į vieną eilutę (***2***).
+Toliau, galima pasirinkti įvesti duomenis paeiliui (***1***), kur programa pati paprašo studento vardo, pavardės ir t.t., arba duomenis surašyti į vieną eilutę (***2***).
 
 Pasirinkus ***1. `Step-by-step entry`***, duomenys turi būti suvesti tokiu formatu:  
 ![input1.1](./screenshots/input1.1.png)  
-Balus reikia suvesti po vieną. Čia galima taip pat pasirinkti atsitiktinai sugeneruoti balą suvedus '***r***'.  
+Balus reikia įvesti po vieną. Galima pasirinkti ir atsitiktinai sugeneruoti balą parašius '***r***'.  
 
 Pasirinkus ***2. `Quick entry`***, duomenys turi būti suvesti tokiu formatu:  
 ![input1.2](./screenshots/input1.2.png)
 
-Galutinė išvestis atodo taip:
+Galutinė išvestis atodo taip:  
 ![output1.1](./screenshots/output1.1.png)
 
+
+### Įvesti duomenis iš failo
+Įveskite ***skaičių 3***, kad duomenis programa nuskaitytų iš failo. 
+Įveskite pilną failo pavadinimą pvz.: Student10000.txt   
+![input2](./screenshots/input2.png)  
+
+Programa atspausdina lentelę su duomenimis iš failo:  
+![output2](./screenshots/output2.png)
+  
+## Sugeneruoti atsitiktinių duomenų sąrašą
+Programa leidžia sugeneruoti atsitiktinius duomenis ir su jais dirbti.  
+Įveskite ***skaičių 4*** ir kiek eilučių norite, kad programa sugeneruotų.  
+Programa praneš, jei failas sėkmingai sugeneruotas.  
+![generateStudFile](./screenshots/generateRandomStudFile.png)
+
+## Darbas su duomenimis
 
 # (v2.0)
 

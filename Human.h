@@ -19,6 +19,6 @@ public:
 
     virtual ~Human()
     {
-        std::cout << "Human destructor called\n";
+        // std::cout << "Human destructor called\n";
     }
 };
