@@ -1,5 +1,40 @@
 # 2 užduotis
 
+# Programos diegimo instrukcija (Unix / Ubuntu OS)
+
+### Reikalavimai
+Programai reikalinga:
+- C++17 versijos kompiliatorius (`g++`)
+- `make` įrankis
+
+### Programos kompiliavimas
+- Kompiliuoti su std::vector konteineriu: make arba make vector
+- Kompiliuoti su std::list konteineriu: make list
+
+### Programos paleidimas
+./student_program
+
+### Išvalyti sugeneruotus failus
+make clean
+
+# Programos naudojimosi instrukcija
+
+
+# (v2.0)
+
+Šioje programos versijoje sukuri keli testai naudojant Catch2.Taip pat sukurta dokumentacija panaudojant Doxygen.
+
+## Unit testai (Catch2)
+Sukurti du testai:
+- ´test_calcFinal´ - patikrina ar teisingai išvesti galutiniai balai (su vidurkiu ir mediana).
+- ´test_student´ - patikrinta ar `Student` klasės kopijavimo konstruktorius sukuria gilią objekto kopiją.  
+
+## test_calcFinal
+
+
+## test_student
+
+
 # (v1.5)
 
 Šioje programos versijoje sukurta abstrakti bazinė klasė ir jos išvestinė klasė.  
@@ -115,23 +150,6 @@ Studentų sąrašas išvedamas į failą vartotojui pasirinkus surūšiuoti stud
 | class   | -O3       |  132 K      |
 
 
-# Programos diegimo instrukcija (Unix / Ubuntu OS)
-### Reikalavimai
-Programai reikalinga:
-- C++17 versijos kompiliatorius (`g++`)
-- `make` įrankis
-
-### Programos kompiliavimas
-- Kompiliuoti su std::vector konteineriu: make arba make vector
-- Kompiliuoti su std::list konteineriu: make list
-
-### Programos paleidimas
-./student_program
-
-### Išvalyti sugeneruotus failus
-make clean
-
-
 # (v1.0)
 Programoje studentų dalijimo į dvi kategorijas buvo naudojama funkcija, kuri atitinka 1 strategiją.
 Todėl buvo sukurto dvi naujos funkcijos naudojant 2 ir 3 strategijas. 3 strategija buvo sukurta panaudojant 2 strategiją.
@@ -172,9 +190,6 @@ Todėl buvo sukurto dvi naujos funkcijos naudojant 2 ir 3 strategijas. 3 strateg
 Šioje versijoje (`v0.3`) buvo atliktas testavimas, siekiant palyginti `std::vector` ir `std::list` veikimo spartą.
 Testavimui naudoti tie patys duomenų failai kaip ir `v0.2` versijoje.  
 Kiekvienam konteineriui buvo atliekami matavimai su tokiais įrašų kiekiais (1000, 10000, 100000, 1000000, 10000000 įrašų).
-
-
-
 
 ## Testavimo aplinka
 | Parametras |  Reikšmė                    | 
