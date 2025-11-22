@@ -95,13 +95,22 @@ Išvestis failuose:
 
 ## Unit testai (Catch2)
 Sukurti du testai:
-- ´test_calcFinal´ - patikrina ar teisingai išvesti galutiniai balai (su vidurkiu ir mediana).
+- ´test_calcFinal´ - patikrina ar teisingai išvesti galutiniai balai (su vidurkiu ir mediana). Testas užtikrina, kad galutinės reikšmės būtų apskaičiuotos pagal numatytą formulę ir būtų tiksliai priskirtos Student objektui.  
 - ´test_student´ - patikrinta ar `Student` klasės kopijavimo konstruktorius sukuria gilią objekto kopiją.  
 
 ## test_calcFinal
-
-
+Šiame teste sukuriamas studento objektas, jam priskiriami trys namų darbų pažymiai ir egzaminas. Tuomet iškviečiama calcFinalGrade funkcija, kuri apskaičiuoja galutinį pažymį pagal vidurkį ir medianą. Testas patikrina, ar gautos reikšmės sutampa su tikėtina galutine verte (9.2), apskaičiuota pagal formulę. 
+![unitTest1](./screenshots/unitTest1.png)  
+  
+Išvada:  
+Testas patvirtina, kad `calcFinalGrade` funkcija teisingai apskaičiuoja galutinį pažymį tiek pagal vidurkį, tiek pagal medianą. Tai užtikrina, kad studento galutinis įvertinimas yra apskaičiuojamas pagal taisyklingą metodiką ir pateikiamas tiksliai.
+  
 ## test_student
+Šiame teste sukuriamas Student objektas ir į jo namų darbų sąrašą įtraukiami trys pažymiai. Tuomet sukuriama objekto kopija, panaudojant kopijavimo konstruktorių. Po kopijavimo tikrinama, ar abiejų objektų pažymių sąrašai sutampa. Vėliau originaliam objektui pridedamas dar vienas pažymys ir tikrinama, ar kopijos pažymių sąrašas išlieka nepakitęs.  
+![unitTest2](./screenshots/unitTest2.png)  
+  
+Išvada:  
+Testas patvirtina, kad kopijavimo konstruktorius veikia gerai, t.y. užtikrina duomenų nepriklausomumą tarp originalaus ir kopijuoto objektų.
 
 
 # (v1.5)
