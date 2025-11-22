@@ -19,6 +19,25 @@ make clean
 
 # Programos naudojimosi instrukcija
 
+Paleidus programą rodomas pasirikimų meniu:
+![meniu](./screenshots/progMeniu.png)
+
+## Įvesti studentų duomenis
+Įveskite ***skaičių 1***, kad suvesti studentų duomenis ***rankiniu būdų***.
+![input1](./screenshots/input1.png)  
+  
+Toliau, galima pasirinkti suvesti duomenis pažingsniui (***1***), kur programa pati paprašo studento vardo, pavardės ir t.t., arba duomenis suvesti į vieną eilutę (***2***).
+
+Pasirinkus ***1. `Step-by-step entry`***, duomenys turi būti suvesti tokiu formatu:  
+![input1.1](./screenshots/input1.1.png)  
+Balus reikia suvesti po vieną. Čia galima taip pat pasirinkti atsitiktinai sugeneruoti balą suvedus '***r***'.  
+
+Pasirinkus ***2. `Quick entry`***, duomenys turi būti suvesti tokiu formatu:  
+![input1.2](./screenshots/input1.2.png)
+
+Galutinė išvestis atodo taip:
+![output1.1](./screenshots/output1.1.png)
+
 
 # (v2.0)
 
