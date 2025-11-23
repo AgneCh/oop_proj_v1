@@ -22,9 +22,9 @@ make clean
 Paleidus programą rodomas pasirikimų meniu:  
 ![meniu](./screenshots/progMeniu.png)
 
-## Įvesti studentų duomenis
+## Studentų duomenų įvestis
 
-### Įvesti duomenis rankiniu būdu
+### Duomenų įvedimas rankiniu būdu
 Įveskite ***skaičių 1***, kad suvesti studentų duomenis ***rankiniu būdų***.
 ![input1](./screenshots/input1.png)  
   
@@ -41,7 +41,7 @@ Galutinė išvestis atodo taip:
 ![output1.1](./screenshots/output1.1.png)
 
 
-### Įvesti duomenis iš failo
+### Duomenų įvedimas iš failo
 Įveskite ***skaičių 3***, kad duomenis programa nuskaitytų iš failo. 
 Įveskite pilną failo pavadinimą pvz.: Student10000.txt   
 ![input2](./screenshots/input2.png)  
@@ -50,7 +50,7 @@ Programa atspausdina lentelę su duomenimis iš failo:
 ![output2](./screenshots/output2.png)
   
 
-### Sugeneruoti atsitiktinių duomenų sąrašą
+### Atsitiktinių duomenų sąrašo generavimas
 Programa leidžia sugeneruoti atsitiktinius duomenis ir su jais dirbti.  
 Įveskite ***skaičių 4*** ir kiek eilučių norite, kad programa sugeneruotų.  
 Programa praneš, jei failas sėkmingai sugeneruotas.  
