@@ -1,0 +1,19 @@
+<map id="StudentIO.h" name="StudentIO.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="229,5,328,31"/>
+<area shape="rect" id="Node000002" href="$Student_8h.html" title="Apibrėžia Student klasę." alt="" coords="123,79,207,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,33,197,74,194,69,259,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="180,225,239,251"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="290,29,308,57,327,95,335,137,333,159,325,179,311,196,293,210,253,229,251,224,290,206,307,193,320,176,328,157,330,138,321,97,304,60,286,32"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="247,152,310,177"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="281,31,281,138,276,138,276,31"/>
+<area shape="rect" id="Node000003" href="$Human_8h.html" title="Apibrėžia abstrakčią Human klasę." alt="" coords="90,152,171,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,106,145,141,140,138,157,103"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="172,104,204,211,199,213,166,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="11,225,91,251"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="124,99,94,105,64,115,35,131,13,153,8,168,11,183,31,214,26,217,6,185,3,168,8,151,32,126,62,110,93,99,123,93"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="185,102,250,142,247,147,182,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="23,152,65,177"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="147,106,77,147,74,143,145,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="145,175,188,214,185,218,142,179"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="120,179,76,218,72,214,116,175"/>
+</map>

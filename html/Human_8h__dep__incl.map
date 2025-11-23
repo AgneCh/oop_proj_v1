@@ -1,0 +1,25 @@
+<map id="Human.h" name="Human.h">
+<area shape="rect" id="Node000001" title="Apibrėžia abstrakčią Human klasę." alt="" coords="301,5,383,31"/>
+<area shape="rect" id="Node000002" href="$Student_8h.html" title="Apibrėžia Student klasę." alt="" coords="300,79,384,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="345,44,345,79,339,79,339,44"/>
+<area shape="rect" id="Node000003" href="$GradeCalc_8h.html" title=" " alt="" coords="81,152,182,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,111,166,154,165,149,295,106"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="283,225,366,251"/>
+<area shape="poly" id="edge13_Node000002_Node000006" title=" " alt="" coords="342,118,329,225,323,225,336,118"/>
+<area shape="rect" id="Node000007" href="$Student_8cpp.html" title=" " alt="" coords="515,152,614,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="391,106,529,149,528,154,390,111"/>
+<area shape="rect" id="Node000008" href="$StudentIO_8h.html" title=" " alt="" coords="206,152,305,177"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="319,115,271,154,268,150,316,110"/>
+<area shape="rect" id="Node000009" href="$StudentSort_8h.html" title=" " alt="" coords="380,152,491,177"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="369,110,422,150,418,154,366,114"/>
+<area shape="rect" id="Node000004" href="$GradeCalc_8cpp.html" title=" " alt="" coords="5,225,121,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="113,189,76,227,72,223,109,185"/>
+<area shape="rect" id="Node000005" href="$StudentIO_8cpp.html" title=" " alt="" coords="145,225,259,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="155,185,192,223,189,227,151,189"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="176,179,294,223,292,228,174,184"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="241,190,213,227,209,224,236,187"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="278,185,315,223,312,227,274,189"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="407,187,344,227,341,223,405,183"/>
+<area shape="rect" id="Node000010" href="$StudentSort_8cpp.html" title=" " alt="" coords="390,225,515,251"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="444,190,452,225,447,226,439,191"/>
+</map>

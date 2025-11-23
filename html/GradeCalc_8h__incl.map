@@ -1,0 +1,18 @@
+<map id="GradeCalc.h" name="GradeCalc.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="177,5,279,31"/>
+<area shape="rect" id="Node000002" href="$Student_8h.html" title="Apibrėžia Student klasę." alt="" coords="146,79,230,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,32,204,68,199,65,219,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="265,152,327,177"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="236,30,287,138,282,141,231,32"/>
+<area shape="rect" id="Node000003" href="$Human_8h.html" title="Apibrėžia abstrakčią Human klasę." alt="" coords="41,152,122,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="172,106,112,147,109,142,169,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,225,64,251"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="146,98,116,104,84,114,54,130,30,154,24,167,23,182,28,212,22,213,17,182,19,165,26,150,51,126,82,109,115,98,145,93"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,225,184,251"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="187,105,154,213,149,211,182,104"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="207,102,268,142,265,147,204,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="197,152,240,177"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="196,103,211,139,206,141,191,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="76,179,52,215,48,212,71,176"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="94,176,127,213,123,217,90,179"/>
+</map>
